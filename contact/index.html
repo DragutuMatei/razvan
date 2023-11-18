@@ -2020,7 +2020,7 @@
                 </div>
               </div>
             </div>
-            <!-- <div
+            <div
               class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3d27bed2"
               data-id="3d27bed2"
               data-element_type="column"
@@ -2039,13 +2039,9 @@
                         id="wpforms-8584"
                       >
                         <form
-                          id="wpforms-form-8584"
-                          class="wpforms-validate wpforms-form wpforms-ajax-form"
-                          data-formid="8584"
-                          method="post"
-                          enctype="multipart/form-data"
-                          action="https://themes.pixelwars.org/energify/demo-01/contact/"
-                          data-token="e59ef826d17b25ac8912cf8ddbb513fd"
+                        id="custom_form"
+                          class="wpforms-validate"
+                          action="mailto: mateidr7@gmail.com" method="post" enctype="text/plain"
                         >
                           <noscript class="wpforms-error-noscript"
                             >Please enable JavaScript in your browser to
@@ -2053,7 +2049,6 @@
                           >
                           <div
                             class="wpforms-hidden"
-                            id="wpforms-error-noscript"
                           >
                             Please enable JavaScript in your browser to complete
                             this form.
@@ -2078,7 +2073,7 @@
                                 type="text"
                                 id="wpforms-8584-field_3"
                                 class="wpforms-field-large wpforms-field-required"
-                                name="wpforms[fields][3]"
+                                name="name"
                                 placeholder="Name"
                                 aria-errormessage="wpforms-8584-field_3-error"
                                 required
@@ -2103,7 +2098,7 @@
                                 type="email"
                                 id="wpforms-8584-field_1"
                                 class="wpforms-field-large wpforms-field-required"
-                                name="wpforms[fields][1]"
+                                name="email"
                                 placeholder="Email"
                                 spellcheck="false"
                                 aria-errormessage="wpforms-8584-field_1-error"
@@ -2128,7 +2123,7 @@
                               ><textarea
                                 id="wpforms-8584-field_2"
                                 class="wpforms-field-large wpforms-field-required"
-                                name="wpforms[fields][2]"
+                                name="message"
                                 placeholder="Your Message"
                                 aria-errormessage="wpforms-8584-field_2-error"
                                 required
@@ -2136,27 +2131,14 @@
                             </div>
                           </div> 
                           <div class="wpforms-submit-container">
-                            <input
-                              type="hidden"
-                              name="wpforms[id]"
-                              value="8584"
-                            /><input
-                              type="hidden"
-                              name="wpforms[author]"
-                              value="1"
-                            /><input
-                              type="hidden"
-                              name="wpforms[post_id]"
-                              value="998"
-                            /><button
-                              type="submit"
-                              name="wpforms[submit]"
+                           <button
+                            type="submit" name="submit" 
                               id="wpforms-submit-8584"
                               class="wpforms-submit"
                               data-alt-text="Sending..."
                               data-submit-text="Submit"
                               aria-live="assertive"
-                              value="wpforms-submit"
+                              value="submit"
                             >
                               Submit</button
                             ><img
@@ -2176,7 +2158,7 @@
                   </div>
                 </div>
               </div>
-            </div> -->
+            </div>  
           </div>
         </section>
         <!-- <section
@@ -2857,5 +2839,43 @@
       };
       /* ]]> */
     </script>
+
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+  ></script>
+
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("user_3dO0i6OPdpXqoxoHSNrwB");
+    })();
+
+
+
+    document
+        .getElementById("custom_form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const serviceID = "service_qrtbdcc";
+          const templateID = "template_5d81zol";
+
+          // send the email here
+          emailjs.sendForm(serviceID, templateID, this).then(
+            (response) => {
+              console.log("SUCCESS!", response.status, response.text);
+              alert("Mesaj trimis!");
+            },
+            (error) => {
+              console.log("FAILED...", error);
+              alert("FAILED...", error);
+            }
+          );
+        });
+
+
+
+
+  </script>
   </body>
 </html>
