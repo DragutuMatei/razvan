@@ -1558,9 +1558,112 @@
               class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3d27bed2"
               data-id="3d27bed2"
               data-element_type="column"
+            > <style>
+              .container{
+                margin-top: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+               
+              }
+              h2, p{
+                text-align: center;
+              }
+               .form-container, form{
+                position: relative;
+                  width: 100%;
+                  max-width: 860px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+              }
+                .form-group{
+                  width: 350px;
+               
+                display: flex;
+                flex-direction: column;
+                margin: 10px 0;
+                font-size: 1em;
+                color: #000;
+            } 
+            
+            select{
+              width: 100%;
+            }
+            label {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+            
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            select {
+                padding: 10px;
+                background-color: #ffb84d;
+                border: none;
+                border-radius: 5px;
+                font-size: 1em;
+            }
+            
+            button {
+              align-self: center;
+                margin-top: 20px !important;
+                padding: 10px 20px !important;
+                background-color: #00cccc !important;
+                color: #fff !important;
+                border: none !important;
+                border-radius: 20px !important;
+                font-size: 1em !important;
+                cursor: pointer !important;
+            }
+            
+            button:hover {
+                background-color: #009999;
+            }
+              </style>
+            <div class="container" 
+            id="remove"
             >
-
-              <div class="elementor-widget-wrap elementor-element-populated">
+              <h2>Mai ai doar 2 pași și ți-ai configurat propriul sistem fotovoltaic :</h2>
+              <p>Felicitări pentru alegerea făcută, suntem aici să te ajutăm cu mai multe informații pentru a implementa cu succes sistemul ales. Înainte de toate o să avem nevoie de datele tale de contact pentru a putea ține legătura.</p>
+             
+              <div class="form-container">
+                  <h2>Cum putem să te contactăm?</h2>
+                  <form 
+                  id="custom_form"
+                      method="post" enctype="text/plain">
+                      <div class="form-group">
+                          <label for="nume">Nume:</label>
+                          <input type="text" id="nume" name="nume" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="prenume">Prenume:</label>
+                          <input type="text" id="prenume" name="prenume" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="email">E-mail:</label>
+                          <input type="email" id="email" name="email">
+                      </div>
+                      <div class="form-group">
+                          <label for="telefon">Telefon:</label>
+                          <input type="tel" id="telefon" name="telefon" required>
+                      </div>
+                      <div class="form-group long">
+                          <label for="oferta">Oferta mea:</label>
+                          <select id="oferta" name="oferta">
+                              <option value="5kw">5 Kw</option>
+                              <option value="6kw">6 Kw</option>
+                              <option value="10kw">10 Kw</option>
+                          </select>
+                      </div>
+                    <button type="submit">Trimite</button>
+                  </form>
+                  </div>
+          </div>
+              <!-- <div class="elementor-widget-wrap elementor-element-populated">
                 <div
                 id="remove"
                   class="elementor-element elementor-element-50988488 elementor-widget elementor-widget-qi_addons_for_elementor_wp_forms"
@@ -1731,12 +1834,11 @@
                             />
                           </div>
                         </form>
-                      </div>
-                      <!-- .wpforms-container -->
+                      </div> 
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>  
           </div>
         </section>
